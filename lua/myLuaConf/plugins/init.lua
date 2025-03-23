@@ -1,3 +1,10 @@
+-- startup dashboard
+require("myLuaConf.plugins.alpha")
+
+-- VimTex Config
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_compiler_method = 'latexrun'
+
 local colorschemeName = nixCats('colorscheme')
 if not require('nixCatsUtils').isNixCats then
   colorschemeName = 'onedark'

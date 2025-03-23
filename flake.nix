@@ -149,6 +149,7 @@
             plenary-nvim
             nvim-notify
             auto-pairs
+            alpha-nvim
           ];
           extra = [
             oil-nvim
