@@ -98,7 +98,7 @@
       # and later, you will include categoryname = true; in the set you
       # provide when you build the package using this builder function.
       # see :help nixCats.flake.outputs.packageDefinitions for info on that section.
-
+      
       # lspsAndRuntimeDeps:
       # this section is for dependencies that should be available
       # at RUN TIME for plugins. Will be available to PATH within neovim terminal
@@ -148,10 +148,14 @@
             vim-repeat
             plenary-nvim
             nvim-notify
+            auto-pairs
           ];
           extra = [
             oil-nvim
             nvim-web-devicons
+          ];
+          texPlugins = [
+             vimtex
           ];
         };
         # You can retreive information from the
@@ -367,6 +371,7 @@
           test = {
             subtest1 = true;
           };
+          texPlugins = true;
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.

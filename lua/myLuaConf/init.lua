@@ -1,3 +1,6 @@
+-- VimTex Config
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_compiler_method = 'latexrun'
 
 -- NOTE: various, non-plugin config
 require('myLuaConf.opts_and_keys')
