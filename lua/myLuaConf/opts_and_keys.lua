@@ -38,6 +38,9 @@ vim.o.expandtab = true
 -- vim.o.softtabstop = 4
 -- vim.o.shiftwidth = 4
 
+-- stop line wrapping
+vim.o.wrap = false;
+
 -- stops line wrapping from being confusing
 vim.o.breakindent = true
 
