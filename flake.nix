@@ -153,7 +153,6 @@
             oil-nvim
             nvim-web-devicons
             image-nvim
-            luasnip
             nnn-vim
           ];
           texPlugins = [
