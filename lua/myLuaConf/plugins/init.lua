@@ -89,8 +89,6 @@ if nixCats('general.extra') then
   -- NNN File Explorer Config
   require("nnn").setup({})
   vim.keymap.set("n", "<leader>fe", "<cmd>NnnExplorer %:p:h<CR>", { noremap = true, desc = '[F]ile [E]xplorer in current dir' })
-
-  require("myLuaConfig.snippets.luasnip")
 end
 
 require('lze').load {

@@ -85,6 +85,8 @@ return {
       luasnip.config.setup {}
 
       local ls = require('luasnip')
+      
+      require("luasnip.loaders.from_lua").load({paths = "../snippets"})
 
       vim.keymap.set({ "i", "s" }, "<M-n>", function()
           if ls.choice_active() then
