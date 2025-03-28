@@ -85,8 +85,23 @@ return {
       luasnip.config.setup {}
 
       local ls = require('luasnip')
+
+      ls.setup({
+        snip_env = {
+          s = function(...)
+            local snip = ls.s(...)
+            -- we can't just access the global `ls_file_snippets`, since it will be
+            -- resolved in the environment of the scope in which it was defined.
+            table.insert(getfenv(2).ls_file_snippets, snip)
+          end,
+          parse = function(...)
+            local snip = ls.parser.parse_snippet(...)
+            table.insert(getfenv(2).ls_file_snippets, snip)
+          end,
+        },
+      })
       
-      require("luasnip.loaders.from_lua").load({paths = "../snippets"})
+      require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/myLuaConf/snippets"})
 
       vim.keymap.set({ "i", "s" }, "<M-n>", function()
           if ls.choice_active() then
