@@ -152,9 +152,16 @@
           extra = [
             oil-nvim
             nvim-web-devicons
+            image-nvim
+            luasnip
+            nnn-vim
           ];
           texPlugins = [
              vimtex
+          ];
+          ui = with pkgs.vimPlugins; [
+            alpha-nvim
+            markview-nvim
           ];
         };
         # You can retreive information from the
@@ -205,9 +212,6 @@
           lazydev-nvim
         ];
         general = {
-          ui = with pkgs.vimPlugins; [
-            alpha-nvim
-          ];
           cmp = with pkgs.vimPlugins; [
             # cmp stuff
             nvim-cmp

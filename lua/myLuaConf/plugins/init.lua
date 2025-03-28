@@ -2,6 +2,11 @@
 if nixCats('general.texPlugin') then
   vim.g.vimtex_view_method = 'zathura'
   vim.g.vimtex_compiler_method = 'latexmk'
+  vim.g.vimtex_view_forward_search_on_start = false
+  vim.g.vimtex_compiler_latexmk = {
+      aux_dir = "/home/oliver/.texfiles/",
+      out_dir = "/home/oliver/.texfiles/"
+  }
 end
 
 local colorschemeName = nixCats('colorscheme')
@@ -67,6 +72,25 @@ if nixCats('general.extra') then
   })
   vim.keymap.set("n", "-", "<cmd>Oil<CR>", { noremap = true, desc = 'Open Parent Directory' })
   vim.keymap.set("n", "<leader>-", "<cmd>Oil .<CR>", { noremap = true, desc = 'Open nvim root directory' })
+
+  -- Images in Markdown
+  require("image").setup({
+    integrations = {
+      markdown = {
+        only_render_image_at_cursor = true,
+        floating_windows = false,
+        resolve_image_path = function(document_path, image_path, fallback)
+          return "/home/oliver/Pictures/"
+        end,
+      },
+    },
+  })
+
+  -- NNN File Explorer Config
+  require("nnn").setup({})
+  vim.keymap.set("n", "<leader>fe", "<cmd>NnnExplorer %:p:h<CR>", { noremap = true, desc = '[F]ile [E]xplorer in current dir' })
+
+  require("myLuaConfig.snippets.luasnip")
 end
 
 require('lze').load {
