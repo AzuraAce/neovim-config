@@ -148,8 +148,6 @@
             vim-repeat
             plenary-nvim
             nvim-notify
-            auto-pairs
-            alpha-nvim
           ];
           extra = [
             oil-nvim
@@ -207,6 +205,9 @@
           lazydev-nvim
         ];
         general = {
+          ui = with pkgs.vimPlugins; [
+            alpha-nvim
+          ];
           cmp = with pkgs.vimPlugins; [
             # cmp stuff
             nvim-cmp
@@ -255,6 +256,7 @@
             undotree
             indent-blankline-nvim
             vim-startuptime
+            nvim-autopairs
             # If it was included in your flake inputs as plugins-hlargs,
             # this would be how to add that plugin in your config.
             # pkgs.neovimPlugins.hlargs

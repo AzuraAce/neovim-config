@@ -1,6 +1,3 @@
--- startup dashboard
-require("myLuaConf.plugins.alpha")
-
 -- VimTex Config
 if nixCats('general.texPlugin') then
   vim.g.vimtex_view_method = 'zathura'
@@ -319,6 +316,18 @@ require('lze').load {
         { "<leader>w", group = "[w]orkspace" },
         { "<leader>w_", hidden = true },
       }
+    end,
+  },
+  {
+    "nvim-autopairs",
+    for_cat = 'general.extra',
+    event = "InsertEnter",
+    config = true,
+    after = function (plugin)
+      require('nvim-autopairs').setup({
+        enable_check_bracket_line = false,
+      })
+      require('nvim-autopairs').add_rule(require('nvim-autopairs.rule')("$$","$$","tex"))
     end,
   },
 }

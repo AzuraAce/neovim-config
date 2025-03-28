@@ -84,6 +84,7 @@ require('nixCatsUtils.catPacker').setup({
   { 'lukas-reineke/indent-blankline.nvim', opt = true, },
   { 'numToStr/Comment.nvim', opt = true, as = "comment.nvim", },
   { 'kylechui/nvim-surround', opt = true, },
+  -- { 'windwp/nvim-autopairs', opt = true, },
   {
     "iamcco/markdown-preview.nvim",
     build = ":call mkdp#util#install()",
