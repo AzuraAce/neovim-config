@@ -117,12 +117,16 @@
         # per nvim package you export
         debug = with pkgs; {
           go = [ delve ];
+          c = [ gdb ];
         };
         go = with pkgs; [
           gopls
           gotools
           go-tools
           gccgo
+        ];
+        c = with pkgs; [
+          clang-tools
         ];
         # and easily check if they are included in lua
         format = with pkgs; [
@@ -381,7 +385,8 @@
 
           # enabling this category will enable the go category,
           # and ALSO debug.go and debug.default due to our extraCats in categoryDefinitions.
-          # go = true; # <- disabled but you could enable it with override or module on install
+          go = true; # <- disabled but you could enable it with override or module on install
+          c = true;
 
           # this does not have an associated category of plugins, 
           # but lua can still check for it
