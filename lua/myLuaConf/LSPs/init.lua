@@ -78,7 +78,9 @@ require('lze').load {
   {
     "clangd",
     for_cat = "c",
-    lsp = {},
+    lsp = {
+      cmd = { "clangd", "--header-insertion=never" }
+    },
   },
   {
     "gopls",
